@@ -1,0 +1,16 @@
+export const fontList = {
+  JakartaBold: require('~/assets/fonts/PlusJakartaSans-Bold.ttf'),
+  JakartaBoldItalic: require('~/assets/fonts/PlusJakartaSans-BoldItalic.ttf'),
+  JakartaExtraBold: require('~/assets/fonts/PlusJakartaSans-ExtraBold.ttf'),
+  JakartaExtraBoldItalic: require('~/assets/fonts/PlusJakartaSans-ExtraBoldItalic.ttf'),
+  JakartaExtraLight: require('~/assets/fonts/PlusJakartaSans-ExtraLight.ttf'),
+  JakartaExtraLightItalic: require('~/assets/fonts/PlusJakartaSans-ExtraLightItalic.ttf'),
+  JakartaItalic: require('~/assets/fonts/PlusJakartaSans-Italic.ttf'),
+  JakartaLight: require('~/assets/fonts/PlusJakartaSans-Light.ttf'),
+  JakartaLightItalic: require('~/assets/fonts/PlusJakartaSans-LightItalic.ttf'),
+  JakartaMedium: require('~/assets/fonts/PlusJakartaSans-Medium.ttf'),
+  JakartaMediumItalic: require('~/assets/fonts/PlusJakartaSans-MediumItalic.ttf'),
+  JakartaRegular: require('~/assets/fonts/PlusJakartaSans-Regular.ttf'),
+  JakartaSemiBold: require('~/assets/fonts/PlusJakartaSans-SemiBold.ttf'),
+  JakartaSemiBoldiItalic: require('~/assets/fonts/PlusJakartaSans-SemiBoldItalic.ttf'),
+};

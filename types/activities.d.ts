@@ -3,10 +3,10 @@ declare type TActivities = {
   title: string;
   // isDone: boolean;
   teoricalContent: (TContentBase & {
-    contentPage: TText[];
+    paragraphs: TText[];
   })[];
   questionContent: (TContentBase & {
-    contentPage: TText[]
+    paragraphs: TText[]
     alternatives: TAlternatives[]
   })[];
 }[];
@@ -19,14 +19,14 @@ declare type TContentBase = {
 declare type TText = {
   id: number;
   type: 'Texto' | 'Math' | 'Texto-Math';
-  content: string | JSX.Element;
+  text: string | JSX.Element;
 }
 
 declare type TAlternatives = {
   id: number;
   type: 'Texto' | 'Math' | 'Texto-Math';
   isAlternativaCerta: boolean;
-  content: string | JSX.Element;
+  text: string | JSX.Element;
 }
 
 declare type TActivityDB = {

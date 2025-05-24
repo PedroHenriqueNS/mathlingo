@@ -3,10 +3,12 @@ import '../global.css';
 import { Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 
-import { useColorScheme, Appearance } from 'react-native';
+import { useColorScheme, Appearance, Text } from 'react-native';
 import { fontList } from '~/constants/fonts';
 import { SQLiteProvider } from 'expo-sqlite';
 import { migrateDbIfNeeded } from '../db/migrations';
+import ActivitiesProvider from '~/context/ActivitiesContext';
+import { GluestackUIProvider } from '~/components/ui/gluestack-ui-provider';
 
 export default function Layout() {
 
@@ -29,13 +31,19 @@ export default function Layout() {
 
   return (
     <SQLiteProvider databaseName="mydb.db" onInit={migrateDbIfNeeded}>
-      <Stack
-        screenOptions={{
-          contentStyle: {
-            backgroundColor: colorScheme === "dark" ? "#131e24" : "#F1F1F1",
-          },
-        }}
-      />
+      <ActivitiesProvider>
+        <GluestackUIProvider>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: {
+                backgroundColor: colorScheme === "dark" ? "#131e24" : "#F1F1F1",
+              },
+              gestureEnabled: true
+            }}
+          />
+        </GluestackUIProvider>
+      </ActivitiesProvider>
     </SQLiteProvider>
   );
 }

@@ -75,7 +75,7 @@ export class ActivitiesRepository {
     activity: TActivityDB
   ): Promise<SQLiteExecuteAsyncResult<TActivityDB> | null> {
     return await this.executeCommandStatement<TActivityDB>(
-      'INSERT INTO activities (id, title, isDone) VALUES ($id, $title, $isDone)',
+      'INSERT INTO activities (id, title, isDone) VALUES (?, ?, ?)',
       [activity.id, activity.title, activity.isDone],
       'Erro ao inserir em activities'
     );

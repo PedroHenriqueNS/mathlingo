@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router'
-import React from 'react'
+import React, { useContext } from 'react'
 import { View } from 'react-native'
 import { Container } from '~/components/Container'
 import Header from './_components/Header'
@@ -7,6 +7,8 @@ import TitleContent from './_components/TitleContent'
 import { PurpleButton } from '~/components/PurpleButton'
 import { MathViewComponent } from '~/components/MathViewComponent'
 import { MathTextComponent } from '~/components/MathTextComponent'
+import { activitiesList } from '~/constants/activities'
+import ActivityButton from './_components/ActivityButton'
 
 export default function index() {
   return (
@@ -20,11 +22,14 @@ export default function index() {
           <TitleContent title="Atividades de Matemática" />
 
           <View className='flex gap-2'>
-            <PurpleButton title="1. Conteúdo 1" />
+            {activitiesList.map(activity => (
+              <ActivityButton key={activity.id} activity={activity} />
+            ))}
+            {/* <PurpleButton title="1. Conteúdo 1" />
             <PurpleButton title="2. Conteúdo 2" />
             <PurpleButton title="3. Conteúdo 3" />
             <PurpleButton title="4. Conteúdo 4" />
-            <PurpleButton title="5. Conteúdo 5" />
+            <PurpleButton title="5. Conteúdo 5" /> */}
           </View>
 
           <MathViewComponent

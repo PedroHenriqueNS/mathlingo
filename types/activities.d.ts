@@ -1,4 +1,4 @@
-declare type TActivities = {
+declare type TActivityConst = {
   id: number;
   title: string;
   // isDone: boolean;
@@ -9,7 +9,7 @@ declare type TActivities = {
     paragraphs: TText[]
     alternatives: TAlternatives[]
   })[];
-}[];
+};
 
 declare type TContentBase = {
   id: number;

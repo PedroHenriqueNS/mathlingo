@@ -1,21 +1,29 @@
-import { StyleProp, useColorScheme, ViewStyle } from 'react-native';
-// @ts-ignore
-import MathView from 'react-native-math-view';
+import { StyleProp, ViewStyle } from 'react-native';
+import MathJax from 'react-native-mathjax-svg'
 
 interface MathViewProps {
   math: string;
   style?: StyleProp<ViewStyle>;
-  config?: { ex: number, em: number }
+  fontSize?: number
 }
 
-export const MathViewComponent = ({ math, style, config }: MathViewProps) => {
-  const colorScheme = useColorScheme();
+export const MathViewComponent = ({ math, style, fontSize }: MathViewProps) => {
+  // const colorScheme = useColorScheme();
 
-  return (
-    <MathView
-      math={math}
-      config={config}
-      style={{ ...(style as object), color: colorScheme === "dark" ? "white" : "black" }}
-    />
-  );
+  // return null;
+  return <MathJax
+    style={style}
+    fontSize={fontSize}
+  >
+    {math}
+  </MathJax>
+
+  // return (
+  //   <MathView
+  //     math={math}
+  //     config={config}
+  //     style={{ ...(style as object), color: colorScheme === "dark" ? "white" : "black" }}
+  //     editable
+  //   />
+  // );
 };

@@ -1,9 +1,9 @@
 import '../global.css';
 
-import { Stack } from 'expo-router';
+import { Redirect, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 
-import { useColorScheme, Appearance, Text } from 'react-native';
+import { useColorScheme, Appearance, StatusBar } from 'react-native';
 import { fontList } from '~/constants/fonts';
 import { SQLiteProvider } from 'expo-sqlite';
 import { migrateDbIfNeeded } from '../db/migrations';
@@ -33,6 +33,10 @@ export default function Layout() {
     <SQLiteProvider databaseName="mydb.db" onInit={migrateDbIfNeeded}>
       <ActivitiesProvider>
         <GluestackUIProvider>
+          <StatusBar barStyle={'dark-content'} />
+
+          {/* <Redirect href="/achievements/unlock-achievements/1" /> */}
+
           <Stack
             screenOptions={{
               headerShown: false,

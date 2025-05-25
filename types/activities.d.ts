@@ -1,14 +1,19 @@
 declare type TActivityConst = {
   id: number;
   title: string;
+  achievementSlugs: string[];
   // isDone: boolean;
   teoricalContent: (TContentBase & {
     paragraphs: TText[];
   })[];
   questionContent: (TContentBase & {
-    paragraphs: TText[]
-    alternatives: TAlternatives[]
+    paragraphs: TText[];
+    alternatives: TAlternatives[];
   })[];
+};
+
+declare type TAchivementsConst = TAchivementsDB & {
+  svg: React.ReactNode | JSX.Element;
 };
 
 declare type TContentBase = {
@@ -18,25 +23,26 @@ declare type TContentBase = {
 
 declare type TText = {
   id: number;
-  type: 'Texto' | 'Math' | 'Texto-Math';
-  text: string | JSX.Element;
-}
+  type: 'Texto' | 'Math';
+  text: string;
+};
 
 declare type TAlternatives = {
   id: number;
-  type: 'Texto' | 'Math' | 'Texto-Math';
+  type: 'Texto' | 'Math';
   isAlternativaCerta: boolean;
-  text: string | JSX.Element;
-}
+  text: string;
+};
 
 declare type TActivityDB = {
   id: number;
   title: string;
-  isDone: boolean
+  isDone: boolean;
 };
 
 declare type TAchivementsDB = {
   id: number;
+  slug: string;
   title: string;
   description: string;
 };

@@ -1,6 +1,7 @@
 import { StyleProp, useColorScheme, ViewStyle } from 'react-native';
 // @ts-ignore
 import { MathText as MathTextPrimitive } from 'react-native-math-view';
+import MathJax from 'react-native-mathjax-svg';
 
 interface MathTextProps {
   value: string;
@@ -11,6 +12,10 @@ interface MathTextProps {
 export const MathTextComponent = ({ value, direction = "ltr", style, config }: MathTextProps) => {
   const colorScheme = useColorScheme();
 
+  return <MathJax
+    style={style}
+  >{value}</MathJax>
+
   return (
     <MathTextPrimitive
       value={value}
@@ -19,6 +24,7 @@ export const MathTextComponent = ({ value, direction = "ltr", style, config }: M
       config={config}
       // CellRendererComponent={<TouchableOpacity />}
       color={colorScheme === "dark" ? "white" : "black"}
+      editable
     />
   );
 };

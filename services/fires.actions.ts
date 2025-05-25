@@ -97,4 +97,15 @@ export class FiresRepository {
       'Erro ao inserir em fires'
     );
   }
+
+  public async getCountOfFires(): Promise<number> {
+    const result = await this.executeQueryStatement<{ 'COUNT(*)': number }>(
+      'SELECT COUNT(*) FROM fires',
+      [],
+      'Erro ao consultar a contagem de fires'
+    );
+
+    if (result) return result[0]['COUNT(*)'];
+    else return 0;
+  }
 }

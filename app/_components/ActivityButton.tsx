@@ -1,6 +1,5 @@
 import { Link } from 'expo-router';
-import { forwardRef } from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { useActivitiesContext } from '~/context/ActivitiesContext';
 
 interface IActivityButton {

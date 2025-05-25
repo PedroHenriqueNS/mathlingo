@@ -1,4 +1,5 @@
-import { SafeAreaView, StyleProp, ViewStyle } from 'react-native';
+import { Platform, SafeAreaView } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface IContainer {
   children: React.ReactNode;
@@ -7,7 +8,17 @@ interface IContainer {
 }
 
 export const Container = ({ children, hasStyles = true, className = "flex flex-1 m-6" }: IContainer) => {
-  return <SafeAreaView className={hasStyles ? className : undefined}>{children}</SafeAreaView>;
+  const insets = useSafeAreaInsets()
+
+  return <SafeAreaView
+    style={{
+      paddingTop: Platform.OS === "android" ? insets.top : 0,
+      paddingBottom: Platform.OS === "android" ? insets.bottom : 0
+    }}
+    className={hasStyles ? className : undefined}
+  >
+    {children}
+  </SafeAreaView>;
 };
 
 // const styles = {

@@ -5,7 +5,6 @@ import { activitiesList } from "~/constants/activities";
 import ActivityHeader from "../_components/ActivityHeader";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { MathViewComponent } from "~/components/MathViewComponent";
-import { MathTextComponent } from "~/components/MathTextComponent";
 import { useState } from "react";
 
 export default function Page() {
@@ -21,15 +20,14 @@ export default function Page() {
   const totalPages = activity.teoricalContent.length + activity.questionContent.length
   const passedPages = activity.teoricalContent.length + (Number(questionPageId) || 0)
 
-  const hasNext = !((activity.questionContent.length - 1) === Number(questionPageId))
+  const hasNextPage = !((activity.questionContent.length - 1) === Number(questionPageId))
 
-  const linkNextPage = hasNext
+  const linkNextPage = hasNextPage
     ? `/activity/${activityId}/questions/${activity.questionContent[Number(questionPageId) + 1].id}`
     : `/activity/${activityId}/finish`
 
   const onHitAlternative = (id: number) => {
-    if (content.alternatives[id].isAlternativaCerta) setHitRightQuestion(true)
-    else setHitRightQuestion(false)
+    setHitRightQuestion(content.alternatives[id].isAlternativaCerta)
 
     setQuestionHitId(id)
     setHitQuestion(true)
@@ -54,11 +52,8 @@ export default function Page() {
 
               if (paragraph.type === "Math")
                 return <View key={paragraph.id} className='my-5 flex-center'>
-                  <MathViewComponent math={paragraph.text} config={{ em: 15, ex: 15 }} />
+                  <MathViewComponent math={paragraph.text} fontSize={15} />
                 </View>
-
-              if (paragraph.type === "Texto-Math")
-                return <MathTextComponent key={paragraph.id} value={paragraph.text} config={{ em: 15, ex: 15 }} />
 
               return null
             })}
@@ -73,7 +68,7 @@ export default function Page() {
                 onPress={() => onHitAlternative(alternative.id)}
                 disabled={hitQuestion}
                 className={`
-                  px-4 py-1 mb-4 border-[4px] border-b-[7px] rounded-2xl flex-grow
+                  mb-4 border-[4px] border-b-[7px] rounded-2xl flex-grow
                   ${hitQuestion
                     ? hitRightQuestion
                       ? questionHitId === alternative.id
@@ -88,11 +83,9 @@ export default function Page() {
               >
                 {alternative.type === "Texto" ?
                   <Text className='text-lg leading-7 font-jakarta-medium'>{alternative.text}</Text>
-                  : alternative.type === "Math" ?
-                    <View className='my-5 flex-center'>
-                      <MathViewComponent math={alternative.text} config={{ em: 10, ex: 10 }} />
-                    </View>
-                    : <MathTextComponent value={alternative.text} config={{ em: 10, ex: 10 }} />
+                  : <View className='mx-2 my-5 flex-center'>
+                    <MathViewComponent math={alternative.text} fontSize={12} />
+                  </View>
                 }
               </TouchableOpacity>
             ))}

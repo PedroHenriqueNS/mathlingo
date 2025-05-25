@@ -15,13 +15,13 @@ export async function migrateDbIfNeeded(db: SQLite.SQLiteDatabase) {
   // if (currentDbVersion >= DATABASE_VERSION) return;
 
   // if (currentDbVersion === 0) {
-    await db.execAsync(`
+  await db.execAsync(`
       PRAGMA journal_mode = 'wal';
       CREATE TABLE IF NOT EXISTS activities (id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, isDone BOOLEAN);
-      CREATE TABLE IF NOT EXISTS achievements (id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, description TEXT);
+      CREATE TABLE IF NOT EXISTS achievements (id INTEGER PRIMARY KEY NOT NULL, slug TEXT NOT NULL, title TEXT NOT NULL, description TEXT);
       CREATE TABLE IF NOT EXISTS fires (id INTEGER PRIMARY KEY NOT NULL, date DATETIME DEFAULT (datetime('now', '-3 hours')));
     `);
-    // await db.runAsync('INSERT INTO activities (value, intValue) VALUES (?, ?)', 'hello', 1);
+  // await db.runAsync('INSERT INTO activities (value, intValue) VALUES (?, ?)', 'hello', 1);
   // }
   await db.execAsync(`PRAGMA user_version = ${DATABASE_VERSION}`);
 }

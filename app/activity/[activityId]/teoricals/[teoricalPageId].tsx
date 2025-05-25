@@ -48,11 +48,8 @@ export default function Page() {
 
               if (paragraph.type === "Math")
                 return <View key={paragraph.id} className='my-5 flex-center'>
-                  <MathViewComponent math={paragraph.text} config={{ em: 15, ex: 15 }} />
+                  <MathViewComponent math={paragraph.text} fontSize={15} />
                 </View>
-
-              if (paragraph.type === "Texto-Math")
-                return <MathTextComponent key={paragraph.id} value={paragraph.text} config={{ em: 15, ex: 15 }} />
 
               return null
             })}

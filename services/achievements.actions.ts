@@ -71,12 +71,26 @@ export class AchievementsRepository {
     return null;
   }
 
+  public async findAchievementBySlug(slug: string): Promise<TAchivementsDB | null> {
+    const result = await this.executeQueryStatement<TAchivementsDB>(
+      'SELECT * FROM achievements WHERE slug = $slug',
+      [slug],
+      'Erro ao encontrar um achievement por slug'
+    );
+
+    if (!result) return null;
+
+    if (result.length > 0) return result[0];
+
+    return null;
+  }
+
   public async insertAchievement(
     achievement: TAchivementsDB
   ): Promise<SQLiteExecuteAsyncResult<TAchivementsDB> | null> {
     return await this.executeCommandStatement<TAchivementsDB>(
-      'INSERT INTO achievements (id, title, description) VALUES ($id, $title, $description)',
-      [achievement.id, achievement.title, achievement.description],
+      'INSERT INTO achievements (id, slug, title, description) VALUES ($id, $slug, $title, $description)',
+      [achievement.id, achievement.slug, achievement.title, achievement.description],
       'Erro ao inserir em achievements'
     );
   }
@@ -89,5 +103,16 @@ export class AchievementsRepository {
       [achievement.title, achievement.description, achievement.id],
       'Erro ao atualizar em achievements'
     );
+  }
+
+  public async getCountOfAchievements(): Promise<number> {
+    const result = await this.executeQueryStatement<{ 'COUNT(*)': number }>(
+      'SELECT COUNT(*) FROM achievements',
+      [],
+      'Erro ao consultar a contagem de achievements'
+    );
+
+    if (result) return result[0]['COUNT(*)'];
+    else return 0;
   }
 }

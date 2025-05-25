@@ -1,77 +1,78 @@
 export const activitiesList: TActivityConst[] = [
   {
     id: 1,
-    title: "Conteúdo 1",
-    teoricalContent: [ //// PÁGINAS
+    title: 'Conteúdo 1',
+    achievementSlugs: ['achievement-test'],
+    teoricalContent: [
+      //// PÁGINAS
       {
         id: 0,
-        contentTitle: "Explicação 1",
-        paragraphs: [ //// PARAGRAFOS
+        contentTitle: 'Explicação 1',
+        paragraphs: [
+          //// PARAGRAFOS
           {
             id: 0,
-            type: "Texto",
-            text: "Texto de teste 21321321 dsasdsadsadvcx, segue abaixo uma formula matemateca"
+            type: 'Texto',
+            text: 'Texto de teste 21321321 dsasdsadsadvcx, segue abaixo uma formula matemateca',
           },
           {
             id: 1,
-            type: "Math",   //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}'
+            type: 'Math', //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
+            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
           },
-          {
-            id: 2,
-            type: "Texto-Math",
-            text: `This text includes math notations and should be wrapped correctly for \\( \\alpha \\) and $\\beta$ within the view. \nThe following formula shouldn't be inline:$$x_{1,2} = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$However the following formula should be inline with the text: \\( a^2 + b^2 = c^2 \\)`
-          }
-        ]
+        ],
       },
       {
         id: 1,
-        contentTitle: "Explicação 2",
-        paragraphs: [ //// PARAGRAFOS
+        contentTitle: 'Explicação 2',
+        paragraphs: [
+          //// PARAGRAFOS
           {
             id: 0,
-            type: "Texto",
-            text: "Texto de teste 21321321 dsasdsadsadvcx, segue abaixo uma formula matemateca"
+            type: 'Texto',
+            text: 'Texto de teste blablabla explicação 2, segue mais uma formula de matemateca',
           },
           {
             id: 1,
-            type: "Texto-Math",
-            text: `This text includes math notations and should be wrapped correctly for \\( \\alpha \\) and $\\beta$ within the view. \nThe following formula shouldn't be inline:$$x_{1,2} = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$However the following formula should be inline with the text: \\( a^2 + b^2 = c^2 \\)`
-          }
-        ]
-      }
+            type: 'Math', //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
+            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+          },
+        ],
+      },
     ],
-    questionContent: [ //// PÁGINAS
+    questionContent: [
+      //// PÁGINAS
       {
         id: 0,
-        contentTitle: "Atividade 1",
-        paragraphs: [ //// PARAGRAFOS DO TEXTO
+        contentTitle: 'Atividade 1',
+        paragraphs: [
+          //// PARAGRAFOS DO TEXTO
           {
             id: 0,
-            type: "Texto",
-            text: "Assinale a resposta correta da seguinte fórmula"
+            type: 'Texto',
+            text: 'Assinale a resposta correta da seguinte fórmula',
           },
           {
             id: 1,
-            type: "Math",
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}'
-          }
+            type: 'Math',
+            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+          },
         ],
         alternatives: [
           {
             id: 0,
-            type: "Math",
+            type: 'Math',
             isAlternativaCerta: true,
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}'
+            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
           },
           {
             id: 1,
-            type: "Math",
+            type: 'Math',
             isAlternativaCerta: false,
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}'
+            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
           },
         ],
       },
-    ]
+    ],
   },
-]
+];

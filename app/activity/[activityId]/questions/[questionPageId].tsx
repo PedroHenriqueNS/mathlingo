@@ -1,4 +1,4 @@
-import { Link, useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Container } from "~/components/Container";
 import { activitiesList } from "~/constants/activities";
@@ -6,9 +6,16 @@ import ActivityHeader from "../_components/ActivityHeader";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { MathViewComponent } from "~/components/MathViewComponent";
 import { useState } from "react";
+import { useActivitiesContext } from "~/context/ActivitiesContext";
+import { ActivitiesRepository } from "~/services/activities.actions";
+import { useSQLiteContext } from "expo-sqlite";
 
 export default function Page() {
+  const db = useSQLiteContext();
   const { activityId, questionPageId } = useLocalSearchParams<{ activityId: string, questionPageId: string }>();
+  const { onChangeActivity } = useActivitiesContext()
+  const activitiesRepository = new ActivitiesRepository(db)
+  const router = useRouter()
 
   const [hitQuestion, setHitQuestion] = useState(false)
   const [hitRightQuestion, setHitRightQuestion] = useState(false)
@@ -22,15 +29,26 @@ export default function Page() {
 
   const hasNextPage = !((activity.questionContent.length - 1) === Number(questionPageId))
 
-  const linkNextPage = hasNextPage
-    ? `/activity/${activityId}/questions/${activity.questionContent[Number(questionPageId) + 1].id}`
-    : `/activity/${activityId}/finish`
-
   const onHitAlternative = (id: number) => {
     setHitRightQuestion(content.alternatives[id].isAlternativaCerta)
 
     setQuestionHitId(id)
     setHitQuestion(true)
+  }
+
+  const submitQuestion = async () => {
+    const linkNextPage = hasNextPage
+      ? `/activity/${activityId}/questions/${activity.questionContent[Number(questionPageId) + 1].id}`
+      : `/activity/${activityId}/finish`
+
+    if (!hasNextPage) await onChangeActivity(async () => {
+      await activitiesRepository.updateActivity({
+        ...activity,
+        isDone: true
+      })
+    })
+
+    router.navigate(linkNextPage)
   }
 
   return (
@@ -132,17 +150,16 @@ export default function Page() {
 
             {hitQuestion && !hitRightQuestion
               ? null
-              : <Link href={linkNextPage} asChild disabled={!hitRightQuestion}>
-                <TouchableOpacity
-                  className={
-                    `border-[3px] border-b-[5px] rounded-[13px] shadow-md p-2 flex-center
+              : <TouchableOpacity
+                className={
+                  `border-[3px] border-b-[5px] rounded-[13px] shadow-md p-2 flex-center
                       ${hitRightQuestion ? 'bg-certo-600 border-certo-500' : 'bg-neutral-500/60 border-neutral-300/60'}
                     `}
-                  disabled={!hitRightQuestion}
-                >
-                  <Text className='text-2xl text-white font-jakarta-extrabold'>Próximo</Text>
-                </TouchableOpacity>
-              </Link>
+                disabled={!hitRightQuestion}
+                onPress={submitQuestion}
+              >
+                <Text className='text-2xl text-white font-jakarta-extrabold'>Próximo</Text>
+              </TouchableOpacity>
             }
           </View>
         </View>

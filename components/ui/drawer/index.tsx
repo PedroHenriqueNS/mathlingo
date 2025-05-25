@@ -36,6 +36,7 @@ const sizes: { [key: string]: number } = {
   sm: 0.25,
   md: 0.5,
   lg: 0.75,
+  xl: 0.90,
   full: 1,
 };
 
@@ -65,6 +66,7 @@ const drawerStyle = tva({
       sm: '',
       md: '',
       lg: '',
+      xl: '',
       full: '',
     },
     anchor: {
@@ -87,6 +89,7 @@ const drawerContentStyle = tva({
       sm: 'w-1/4',
       md: 'w-1/2',
       lg: 'w-3/4',
+      xl: 'w-4/5',
       full: 'w-full',
     },
     anchor: {
@@ -131,6 +134,11 @@ const drawerContentStyle = tva({
       anchor: 'bottom',
       size: 'lg',
       class: 'h-3/4',
+    },
+    {
+      anchor: 'bottom',
+      size: 'xl',
+      class: 'h-4/5',
     },
     {
       anchor: 'bottom',
@@ -261,6 +269,7 @@ const DrawerContent = React.forwardRef<
       transition={{
         type: 'timing',
         duration: 300,
+        ease: 'easeInOut'
       }}
       {...props}
       className={drawerContentStyle({

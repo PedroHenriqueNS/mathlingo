@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useSQLiteContext } from 'expo-sqlite';
 import { AchievementsRepository } from '~/services/achievements.actions';
 import { FiresRepository } from '~/services/fires.actions';
+import FiresDrawer from '~/components/FiresDrawer';
 
 export default function Header() {
 
@@ -29,10 +30,12 @@ export default function Header() {
 
   return (
     <View className='flex flex-row items-center h-16 justify-evenly'>
-      <View className='flex-row h-full gap-3 px-2 flex-center'>
-        <FontAwesome5 name="fire-alt" size={24} color="#ffa500" />
-        <Text className='text-lg font-jakarta-extrabold text-thirty-500'>{fires}</Text>
-      </View>
+      <FiresDrawer>
+        <View className='flex-row h-full gap-3 px-2 flex-center'>
+          <FontAwesome5 name="fire-alt" size={24} color="#ffa500" />
+          <Text className='text-lg font-jakarta-extrabold text-thirty-500'>{fires}</Text>
+        </View>
+      </FiresDrawer>
 
       <AchievementsDrawer>
         <View className='flex-row h-full gap-3 px-2 flex-center'>

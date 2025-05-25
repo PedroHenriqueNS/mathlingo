@@ -14,7 +14,7 @@ export default function index() {
       <Container>
         <Header />
 
-        <View className='flex gap-4'>
+        <View className='flex gap-5'>
           <TitleContent title="Atividades de Matemática" />
 
           <View className='flex gap-2'>

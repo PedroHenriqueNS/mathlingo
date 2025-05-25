@@ -49,7 +49,7 @@ export class FiresRepository {
     return null;
   }
 
-  public async getAllAchievements(): Promise<TFiresDB[] | null> {
+  public async gelAllFires(): Promise<TFiresDB[] | null> {
     return await this.executeQueryStatement<TFiresDB>(
       'SELECT * FROM fires',
       undefined,
@@ -92,7 +92,13 @@ export class FiresRepository {
 
   public async insertTodaysFire(): Promise<SQLiteExecuteAsyncResult<TFiresDB> | null> {
     return await this.executeCommandStatement<TFiresDB>(
-      'INSERT INTO fires DEFAULT VALUES',
+      `INSERT INTO fires (date)
+                        SELECT date('now', '-3 hours')
+                        WHERE NOT EXISTS (
+                            SELECT 1
+                            FROM fires
+                            WHERE date(date) = date('now', '-3 hours')
+                        )`,
       undefined,
       'Erro ao inserir em fires'
     );

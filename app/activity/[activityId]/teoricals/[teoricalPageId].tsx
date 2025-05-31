@@ -4,12 +4,13 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, useLocalSearchParams } from 'expo-router';
 import { activitiesList } from '~/constants/activities';
 import { MathViewComponent } from '~/components/MathViewComponent';
-import { MathTextComponent } from '~/components/MathTextComponent';
 import { useState, useEffect } from 'react';
 import ActivityHeader from '../_components/ActivityHeader';
+import { useActivitiesContext } from '~/context/ActivitiesContext';
 
 export default function Page() {
   const { activityId, teoricalPageId } = useLocalSearchParams<{ activityId: string, teoricalPageId: string }>();
+  const { changeActualSucessActivity } = useActivitiesContext()
 
   const activity = activitiesList.find(activity => activity.id === Number(activityId))!
   const content = activity.teoricalContent[Number(teoricalPageId)]
@@ -25,6 +26,12 @@ export default function Page() {
     const timer = setTimeout(() => setCanContinue(true), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const runEffect = async () => changeActualSucessActivity(Number(activityId), null)
+    runEffect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const totalPages = activity.teoricalContent.length + activity.questionContent.length
   const passedPages = (Number(teoricalPageId) || 0)
@@ -65,7 +72,7 @@ export default function Page() {
             // elevation: 10
           }}
         >
-          <Link href={linkNextPage} asChild>
+          <Link href={linkNextPage as `/activity/${string}/teoricals/${string}` | `/activity/${string}/questions/${string}`} asChild>
             <TouchableOpacity
               className={
                 `border-[3px] border-b-[5px] rounded-[13px] shadow-md p-2 flex-center

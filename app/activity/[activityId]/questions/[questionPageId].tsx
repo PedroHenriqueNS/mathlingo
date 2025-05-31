@@ -1,4 +1,4 @@
-import { Link, useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Container } from "~/components/Container";
 import { activitiesList } from "~/constants/activities";
@@ -7,18 +7,16 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { MathViewComponent } from "~/components/MathViewComponent";
 import { useState } from "react";
 import { useActivitiesContext } from "~/context/ActivitiesContext";
-import { ActivitiesRepository } from "~/services/activities.actions";
-import { useSQLiteContext } from "expo-sqlite";
+import ContinueButtonDrawer from "./_components/ContinueButtonDrawer";
 
 export default function Page() {
-  const db = useSQLiteContext();
   const { activityId, questionPageId } = useLocalSearchParams<{ activityId: string, questionPageId: string }>();
-  const { onChangeActivity } = useActivitiesContext()
-  const activitiesRepository = new ActivitiesRepository(db)
+  const { changeActualActivityQuestion } = useActivitiesContext()
   const router = useRouter()
 
   const [hitQuestion, setHitQuestion] = useState(false)
   const [hitRightQuestion, setHitRightQuestion] = useState(false)
+  const [alternativeHitId, setAlternativeHitId] = useState<number | null>(null)
   const [questionHitId, setQuestionHitId] = useState<number | null>(null)
 
   const activity = activitiesList.find(activity => activity.id === Number(activityId))!
@@ -30,6 +28,7 @@ export default function Page() {
   const hasNextPage = !((activity.questionContent.length - 1) === Number(questionPageId))
 
   const onHitAlternative = (id: number) => {
+    setAlternativeHitId(id)
     setHitRightQuestion(content.alternatives[id].isAlternativaCerta)
 
     setQuestionHitId(id)
@@ -41,14 +40,9 @@ export default function Page() {
       ? `/activity/${activityId}/questions/${activity.questionContent[Number(questionPageId) + 1].id}`
       : `/activity/${activityId}/finish`
 
-    if (!hasNextPage) await onChangeActivity(async () => {
-      await activitiesRepository.updateActivity({
-        ...activity,
-        isDone: true
-      })
-    })
+    changeActualActivityQuestion(Number(questionPageId), hitRightQuestion)
 
-    router.navigate(linkNextPage)
+    router.navigate(linkNextPage as `/activity/${string}/questions/${number}` | `/activity/${string}/finish`)
   }
 
   return (
@@ -118,49 +112,14 @@ export default function Page() {
               // elevation: 10
             }}
           >
-            {hitQuestion && !hitRightQuestion
-              ? <View className="flex flex-row gap-3 justify-evenly">
-                <Link href={`/activity/${activityId}/teoricals/0`} asChild>
-                  <TouchableOpacity
-                    className={`border-[3px] border-b-[5px] rounded-[13px] shadow-md p-2 flex-grow flex-center bg-amber-400 border-thirty-200`}
-                    onPress={() => {
-                      setQuestionHitId(0)
-                      setHitQuestion(false)
-                      setHitRightQuestion(false)
-                    }}
-                  >
-                    <Text className='text-2xl text-white font-jakarta-extrabold'>Voltar para teoria</Text>
-                  </TouchableOpacity>
-                </Link>
-
-                <TouchableOpacity
-                  className={`border-[3px] border-b-[5px] rounded-[13px] shadow-md p-2 flex-grow flex-center bg-secondary-500 border-secondary-300`}
-                  onPress={() => {
-                    setQuestionHitId(0)
-                    setHitQuestion(false)
-                    setHitRightQuestion(false)
-                  }}
-                >
-                  <Text className='text-2xl text-white font-jakarta-extrabold'>Tentar de novo</Text>
-                </TouchableOpacity>
-              </View>
-              : null
-            }
-
-
-            {hitQuestion && !hitRightQuestion
-              ? null
-              : <TouchableOpacity
-                className={
-                  `border-[3px] border-b-[5px] rounded-[13px] shadow-md p-2 flex-center
-                      ${hitRightQuestion ? 'bg-certo-600 border-certo-500' : 'bg-neutral-500/60 border-neutral-300/60'}
-                    `}
-                disabled={!hitRightQuestion}
-                onPress={submitQuestion}
-              >
-                <Text className='text-2xl text-white font-jakarta-extrabold'>Próximo</Text>
-              </TouchableOpacity>
-            }
+            <ContinueButtonDrawer
+              activityId={Number(activityId)}
+              questionId={Number(questionPageId)}
+              alternativeHitId={alternativeHitId}
+              hitQuestion={hitQuestion}
+              hitRightQuestion={hitRightQuestion}
+              submitQuestion={submitQuestion}
+            />
           </View>
         </View>
       </View>

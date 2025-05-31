@@ -168,7 +168,7 @@ type IDrawerProps = React.ComponentProps<typeof UIDrawer> &
   VariantProps<typeof drawerStyle> & { className?: string };
 
 type IDrawerBackdropProps = React.ComponentProps<typeof UIDrawer.Backdrop> &
-  VariantProps<typeof drawerBackdropStyle> & { className?: string };
+  VariantProps<typeof drawerBackdropStyle> & { className?: string, opacity?: number };
 
 type IDrawerContentProps = React.ComponentProps<typeof UIDrawer.Content> &
   VariantProps<typeof drawerContentStyle> & { className?: string };
@@ -205,7 +205,7 @@ const Drawer = React.forwardRef<
 const DrawerBackdrop = React.forwardRef<
   React.ComponentRef<typeof UIDrawer.Backdrop>,
   IDrawerBackdropProps
->(function DrawerBackdrop({ className, ...props }, ref) {
+>(function DrawerBackdrop({ className, opacity = 0.5, ...props }, ref) {
   return (
     <UIDrawer.Backdrop
       ref={ref}
@@ -213,7 +213,7 @@ const DrawerBackdrop = React.forwardRef<
         opacity: 0,
       }}
       animate={{
-        opacity: 0.5,
+        opacity: opacity,
       }}
       exit={{
         opacity: 0,

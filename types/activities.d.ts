@@ -1,3 +1,12 @@
+declare type TActivityProgress = {
+  activityId: number;
+  finishSuccess: boolean | null;
+  questionsProgress: {
+    questionId: number;
+    finishSucess: boolean | null;
+  }[];
+};
+
 declare type TActivityConst = {
   id: number;
   title: string;

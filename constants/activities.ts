@@ -81,211 +81,210 @@ export const activitiesList: TActivityConst[] = [
     achievementSlugs: ['achievement-test'],
     teoricalContent: [
       {
-        id:0,
-        contentTitle:"Matriz",
+        id: 0,
+        contentTitle: 'Matriz',
         paragraphs: [
           {
-          id: 0,
-          type: "Texto",
-          text: "Tabelas com m linhas e n colunas são denominadas matrizes m x n"
+            id: 0,
+            type: 'Texto',
+            text: 'Tabelas com "m" linhas e "n" colunas são denominadas matrizes "m x n"',
           },
           {
-            id:1,
-            type: "Math",
-            text: '\\left( \\begin{array}{cc} -2 & 3 \\\\ 1 & 4 \\end{array} \\right)_{2 \\times 2}'
+            id: 1,
+            type: 'Math',
+            text: '\\left( \\begin{array}{cc} -2 & 3 \\\\ 1 & 4 \\end{array} \\right)_{2 \\times 2}',
           },
           {
-            id:2,
-            type: "Math",
-            text: '\\left[ \\begin{array}{cc} 4 & 0 \\\\ -\\sqrt{2} & \\pi \\\\ 1 & 1 \\end{array} \\right]_{3 \\times 2}'
-          }
-        ]
+            id: 2,
+            type: 'Math',
+            text: '\\left[ \\begin{array}{cc} 4 & 0 \\\\ -\\sqrt{2} & \\pi \\\\ 1 & 1 \\end{array} \\right]_{3 \\times 2}',
+          },
+        ],
       },
       {
         id: 1,
-        contentTitle:"Notação e Formação de uma Matriz",
+        contentTitle: 'Notação e Formação de uma Matriz',
         paragraphs: [
           {
             id: 0,
-            type: "Math",
-            text: 'A = \\left[ a_{ij} \\right]_{m \\times n}'
+            type: 'Math',
+            text: 'A = \\left[ a_{ij} \\right]_{m \\times n}',
           },
           {
             id: 1,
-            type: "Text",
-            text: "Onde i e j representam, respectivamente, a linha e a coluna que o elemento ocupa."
+            type: 'Texto',
+            text: 'Onde i e j representam, respectivamente, a linha e a coluna que o elemento ocupa.',
           },
           {
             id: 2,
-            type: "Math",
-            text: 'A = \\left( \\begin{array}{cccc} a_{11} & \\cdots & & a_{1n} \\\\ \\vdots & \\ddots & \\cdots & \\vdots \\\\ a_{m1} & \\cdots & & a_{mn} \\end{array} \\right)'
-          }, {
+            type: 'Math',
+            text: 'A = \\left( \\begin{array}{cccc} a_{11} & \\cdots & & a_{1n} \\\\ \\vdots & \\ddots & \\cdots & \\vdots \\\\ a_{m1} & \\cdots & & a_{mn} \\end{array} \\right)',
+          },
+          {
             id: 3,
-            type: "Text",
-            text: "Exemplo:"
+            type: 'Texto',
+            text: 'Exemplo:',
           },
           {
             id: 4,
-            type: "Text",
-            text: "𝑚 = 2 𝑟𝑒𝑝𝑟𝑒𝑠𝑒𝑛𝑡𝑎 𝑜 𝑛ú𝑚𝑒𝑟𝑜 𝑑𝑒 𝑙𝑖𝑛ℎ𝑎, 𝑛 = 3 𝑛ú𝑚𝑒𝑟𝑜 𝑑𝑒 𝑐𝑜𝑙𝑢𝑛𝑎"
+            type: 'Texto',
+            text: '𝑚 = 2 𝑟𝑒𝑝𝑟𝑒𝑠𝑒𝑛𝑡𝑎 𝑜 𝑛ú𝑚𝑒𝑟𝑜 𝑑𝑒 𝑙𝑖𝑛ℎ𝑎, 𝑛 = 3 𝑛ú𝑚𝑒𝑟𝑜 𝑑𝑒 𝑐𝑜𝑙𝑢𝑛𝑎',
           },
           {
             id: 5,
-            type: "Text",
-            text: "𝑎11 = 2 𝑎12 = −3 𝑎13 = 4  -----> 𝑎21 = 1 𝑎22 = 0 𝑎23 = 5"
+            type: 'Math',
+            text: '\\begin{aligned}\\text{a}_{11} &= 2 & & & \\text{a}_{21} &= 1 \\\\\\text{a}_{12} &= -3 & -----> & & \\text{a}_{22} &= 0 \\\\\\text{a}_{13} &= 4 & & & \\text{a}_{23} &= 5\\end{aligned}',
           },
           {
             id: 6,
-            type: "Math",
-            text: 'A = \\left( \\begin{array}{ccc} 2 & -3 & 4 \\\\ 1 & 0 & 5 \\end{array} \\right)_{2 \\times 3}'
-          } 
-        ]
+            type: 'Math',
+            text: 'A = \\left( \\begin{array}{ccc} 2 & -3 & 4 \\\\ 1 & 0 & 5 \\end{array} \\right)_{2 \\times 3}',
+          },
+        ],
       },
       {
         id: 2,
-        contentTitle:"Matrizes Especiais",
+        contentTitle: 'Matrizes Especiais',
         paragraphs: [
           {
             id: 0,
-            type: "Text",
-            text: "Matriz Linha"
+            type: 'Texto',
+            text: 'Matriz Linha',
           },
           {
             id: 1,
-            type: "Text",
-            text: "É toda matriz do tipo l x n, ou seja, uma única linha."
+            type: 'Texto',
+            text: 'É toda matriz do tipo l x n, ou seja, uma única linha.',
           },
           {
             id: 2,
-            type: "Math",
-            text: '\\left[ 1 \\quad 0 \\quad -15 \\right]'
+            type: 'Math',
+            text: '\\left[ 1 \\quad 0 \\quad -15 \\right]',
           },
           {
             id: 3,
-            type: "Text",
-            text: "Matriz Coluna"
+            type: 'Texto',
+            text: 'Matriz Coluna',
           },
           {
             id: 4,
-            type: "Text",
-            text: "É toda matriz do tipo m x 1, ou seja, com uma única coluna"
+            type: 'Texto',
+            text: 'É toda matriz do tipo m x 1, ou seja, com uma única coluna',
           },
           {
             id: 5,
-            type: "Math",
-            text: '\\left[ \\begin{array}{c} 1 \\\\ 1 \\end{array} \\right]'
+            type: 'Math',
+            text: '\\left[ \\begin{array}{c} 1 \\\\ 1 \\end{array} \\right]',
           },
           {
             id: 6,
-            type: "Text",
-            text: "Matriz Quadrada"
+            type: 'Texto',
+            text: 'Matriz Quadrada',
           },
           {
             id: 7,
-            type: "Text",
-            text: "É toda matriz que seja do tipo m x m, ou seja, o mesmo numero de linhas e colunas."
+            type: 'Texto',
+            text: 'É toda matriz que seja do tipo m x m, ou seja, o mesmo numero de linhas e colunas.',
           },
           {
             id: 8,
-            type: "Math",
-            text: '\\left[ \\begin{array}{cc} 1 & 0 \\\\ 5 & -1 \\end{array} \\right]'
+            type: 'Math',
+            text: '\\left[ \\begin{array}{cc} 1 & 0 \\\\ 5 & -1 \\end{array} \\right]',
           },
           {
             id: 9,
-            type: "Text",
-            text: "Matriz Nula"
+            type: 'Texto',
+            text: 'Matriz Nula',
           },
           {
             id: 10,
-            type: "Text",
-            text: "É toda matriz em que seus elementos sejam nulos"
+            type: 'Texto',
+            text: 'É toda matriz em que seus elementos sejam nulos',
           },
           {
             id: 11,
-            type: "Math",
-            text: 'A = \\left( \\begin{array}{ccc} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{array} \\right)_{3 \\times 3}'
+            type: 'Math',
+            text: 'A = \\left( \\begin{array}{ccc} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{array} \\right)_{3 \\times 3}',
           },
           {
             id: 12,
-            type: "Text",
-            text: "Matriz Diagonal"
+            type: 'Texto',
+            text: 'Matriz Diagonal',
           },
           {
             id: 13,
-            type: "Text",
-            text: "É toda matriz quadrada onde todos os elementos que não estão na diagonal principal são nulos"
+            type: 'Texto',
+            text: 'É toda matriz quadrada onde todos os elementos que não estão na diagonal principal são nulos',
           },
           {
             id: 14,
-            type: "Math",
-            text: '\\quad \\begin{pmatrix}1 & 0 \\\\0 & 3\\end{pmatrix}'
+            type: 'Math',
+            text: '\\quad \\begin{pmatrix}1 & 0 \\\\0 & 3\\end{pmatrix}',
           },
           {
             id: 15,
-            type: "Math",
-            text: '\\begin{pmatrix}1 & 0 & 0 \\\\0 & -2 & 0 \\\\0 & 0 & 3\\end{pmatrix}'
+            type: 'Math',
+            text: '\\begin{pmatrix}1 & 0 & 0 \\\\0 & -2 & 0 \\\\0 & 0 & 3\\end{pmatrix}',
           },
           {
             id: 16,
-            type: "Text",
-            text: "Matriz Identidade"
+            type: 'Texto',
+            text: 'Matriz Identidade',
           },
           {
             id: 17,
-            type: "text",
-            text: "É toda matriz quadrada onde todos os elementos da diagonal principal são iguais a 1 e os demais igual a o"
+            type: 'Texto',
+            text: 'É toda matriz quadrada onde todos os elementos da diagonal principal são iguais a 1 e os demais igual a o',
           },
-             {
+          {
             id: 18,
-            type: "Math",
-            text: 'I_n = [a_{ij}], \\quad a_{ij} = \\begin{cases}1, & \\text{se } i = j \\\\0, & \\text{se } i \\ne j\\end{cases}'
+            type: 'Math',
+            text: 'I_n = [a_{ij}], \\quad a_{ij} = \\begin{cases}1, & \\text{se } i = j \\\\0, & \\text{se } i \\ne j\\end{cases}',
           },
           {
             id: 19,
-            type: "Math",
-            text: '\\begin{pmatrix}1 & 0 & 0 \\\\0 & 1 & 0 \\\\0 & 0 & 1\\end{pmatrix}'
+            type: 'Math',
+            text: '\\begin{pmatrix}1 & 0 & 0 \\\\0 & 1 & 0 \\\\0 & 0 & 1\\end{pmatrix}',
           },
           {
             id: 20,
-            type: "Math",
-            text: 'a_{11} = a_{22} = a_{33} = 1'
+            type: 'Math',
+            text: 'a_{11} = a_{22} = a_{33} = 1',
           },
           {
             id: 21,
-            type: "Text",
-            text: "Matriz Transposta"
+            type: 'Texto',
+            text: 'Matriz Transposta',
           },
           {
             id: 22,
-            type: "Text",
-            text: "Chamamos de matriz transposta a matriz obtida a partir de uma matriza A, trocando-se ordenadamente suas linhas por colunas ou colunas por linha."
+            type: 'Texto',
+            text: 'Chamamos de matriz transposta a matriz obtida a partir de uma matriza A, trocando-se ordenadamente suas linhas por colunas ou colunas por linha.',
           },
           {
             id: 23,
-            type: "Math",
-            text: 'A = \\begin{bmatrix}1 & 2 & -3 \\\\4 & 5 & 6\\end{bmatrix}'
+            type: 'Math',
+            text: 'A = \\begin{bmatrix}1 & 2 & -3 \\\\4 & 5 & 6\\end{bmatrix}',
           },
           {
             id: 24,
-            type: "Math",
-            text: 'A^T = \\begin{pmatrix}1 & 4 \\\\2 & 5 \\\\-3 & 6\\end{pmatrix}'
+            type: 'Math',
+            text: 'A^T = \\begin{pmatrix}1 & 4 \\\\2 & 5 \\\\-3 & 6\\end{pmatrix}',
           },
           {
             id: 25,
-            type: "Math",
-            text: 'A = \\begin{pmatrix}1 & 0 & 5 \\\\5 & -6 & 9 \\\\2 & 7 & 0\\end{pmatrix}'
+            type: 'Math',
+            text: 'A = \\begin{pmatrix}1 & 0 & 5 \\\\5 & -6 & 9 \\\\2 & 7 & 0\\end{pmatrix}',
           },
           {
             id: 26,
-            type: "Math",
-            text: 'A^T = \\begin{pmatrix}1 & 5 & 2 \\\\0 & -6 & 7 \\\\5 & 9 & 0 \\end{pmatrix}'
+            type: 'Math',
+            text: 'A^T = \\begin{pmatrix}1 & 5 & 2 \\\\0 & -6 & 7 \\\\5 & 9 & 0 \\end{pmatrix}',
           },
-        ]   
-      }
-      
-      
-  
-    
-],
-};
+        ],
+      },
+    ],
 
+    questionContent: [],
+  },
+];

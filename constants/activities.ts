@@ -2119,8 +2119,7 @@ export const activitiesList: TActivityConst[] = [
           },
         ],
       },
-    ],
-    questionContent: [
+    ],questionContent: [
       {
         id: 0,
         contentTitle: 'Identificando o Grau',
@@ -2560,6 +2559,128 @@ export const activitiesList: TActivityConst[] = [
             type: 'Math',
             isAlternativaCerta: false,
             text: '(3x - 2)^2',
+          },
+        ],
+      },
+    ],  
+    questionContent: [
+      {
+        id: 0,
+        contentTitle: 'Derivada',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Determine a derivada da função abaixo:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = 5x^3 - 2x^2 + 4x - 7',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Texto',
+            isAlternativaCerta: true,
+            text: 'f(x) = 15x^2 - 4x + 4',
+          },
+          {
+            id: 1,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: 'f(x) = 15x^2 + 4',
+          },
+          {
+            id: 2,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: 'f(x) = 15x^2 + 4x - 4',
+          },
+          {
+            id: 3,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: 'f(x) = 5x^2 + 4x - 4',
+          },
+        ],
+      },
+      {
+        id: 1,
+        contentTitle: 'Produto de funções',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Calcule a derivada a seguir:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = (2x^2 + 3x)(x^3 - x)',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Math',
+            isAlternativaCerta: true,
+            text: 'f(x) = (4x + 3)(x^3 - x) + (2x^2 + 3x)(3x^2 - 1)',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = (4x + 3)(x^3 - 1) + (2x^2 + 3)(3x^2 - 1)',
+          },
+          {
+            id: 2,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = (4x + 3) + (3x^2 - 1)',
+          },
+        ],
+      },
+      {
+        id: 2,
+        contentTitle: 'Regra da Cadeia',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Calcule a derivada:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = \sin(3x^2)',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Math',
+            isAlternativaCerta: true,
+            text: 'f(x) = 6x \cos(3x^2)',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = 3x \cos(3x^2)',
+          },
+          {
+            id: 2,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = 2x \cos(3x^3)',
+          },
+          {
+            id: 3,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = 6x \cos(3x)',
           },
         ],
       },

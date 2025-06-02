@@ -6,11 +6,11 @@ export async function migrateDbIfNeeded(db: SQLite.SQLiteDatabase) {
   const currentDbVersion = result?.user_version ?? 0;
 
   // Always reset the database by dropping existing tables
-  await db.execAsync(`
-    DROP TABLE IF EXISTS activities;
-    DROP TABLE IF EXISTS achievements;
-    DROP TABLE IF EXISTS fires;
-  `);
+  // await db.execAsync(`
+  //   DROP TABLE IF EXISTS activities;
+  //   DROP TABLE IF EXISTS achievements;
+  //   DROP TABLE IF EXISTS fires;
+  // `);
 
   // if (currentDbVersion >= DATABASE_VERSION) return;
 

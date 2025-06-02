@@ -303,6 +303,55 @@ export const activitiesList: TActivityConst[] = [
             isAlternativaCerta: false,
             text: 'B = \\begin{pmatrix} 1 & -2 & -6 \\\\ 7 & 1 & -4 \\\\ -3 & 9 & 1 \\end{pmatrix}',
           },
+          {
+            id: 1,
+            type: 'Math',
+            isAlternativaCerta: true,
+            text: 'B = \\begin{pmatrix} 1 & -3 & -8 \\\\ 3 & 1 & -5 \\\\ 8 & 5 & 1 \\end{pmatrix}',
+          }
+          {
+            id: 2,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'B = \\begin{pmatrix} 0 & -7 & 2 \\\\ -1 & 0 & -9 \\\\ 6 & 3 & 0 \\end{pmatrix}',
+          } 
+        ],
+      },
+      {
+        id: 1,
+        contentTitle: 'Atividade 2',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Imagem', // TODO: IMAGEM
+            text: 'imagem-id-1',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: '12',
+          },
+          {
+            id: 1,
+            type: 'Texto',
+            isAlternativaCerta: true,
+            text: '3',
+          },
+          {
+            id: 2,
+            type: 'Texto',
+            isAlternativaCerta: true,
+            text: '6',
+          },
+          {
+            id: 3,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: '9',
+          },
         ],
       },
     ],

@@ -286,23 +286,25 @@ export const activitiesList: TActivityConst[] = [
     ],
 
     questionContent: [
-       {
+      {
         id: 0,
         contentTitle: 'Atividade 1',
         paragraphs: [
           {
             id: 0,
-            type: 'Imagem',
-            text: 'imagem-id-0'
-          }
-    ],
-    alternatives: [
+            type: 'Imagem', // TODO: IMAGEM
+            text: 'imagem-id-0',
+          },
+        ],
+        alternatives: [
           {
             id: 0,
             type: 'Math',
             isAlternativaCerta: false,
-            text: 'B = \\begin{pmatrix} 1 & -2 & -6 \\\\ 7 & 1 & -4 \\\\ -3 & 9 & 1 \\end{pmatrix}'
+            text: 'B = \\begin{pmatrix} 1 & -2 & -6 \\\\ 7 & 1 & -4 \\\\ -3 & 9 & 1 \\end{pmatrix}',
           },
-          
+        ],
+      },
+    ],
   },
 ];

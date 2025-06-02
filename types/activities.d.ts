@@ -32,7 +32,7 @@ declare type TContentBase = {
 
 declare type TText = {
   id: number;
-  type: 'Texto' | 'Math';
+  type: 'Texto' | 'Math' | 'Imagem';
   text: string;
 };
 

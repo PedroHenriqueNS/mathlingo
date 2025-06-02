@@ -93,8 +93,8 @@ export default function Page() {
                   }
                 `}
               >
-                {alternative.type === "Texto" ?
-                  <Text className='text-lg leading-7 font-jakarta-medium'>{alternative.text}</Text>
+                {alternative.type === "Texto"
+                  ? <Text className='py-1 text-lg leading-7 text-center font-jakarta-medium'>{alternative.text}</Text>
                   : <View className='mx-2 my-5 flex-center'>
                     <MathViewComponent math={alternative.text} fontSize={12} />
                   </View>

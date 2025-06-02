@@ -12,7 +12,7 @@ export const Button = forwardRef<View, ButtonProps>(({ title, bordered = false, 
       ref={ref}
       {...touchableProps}
       className={`${styles.button} ${bordered && 'bg-transparent border-2 border-indigo-500'} ${touchableProps.className}`}>
-      <Text className={`${styles.buttonText} ${bordered && 'text-indigo-500'}`}>{title}</Text>
+      <Text className={`${styles.buttonText} ${bordered && '!text-indigo-500'}`}>{title}</Text>
     </TouchableOpacity>
   );
 });

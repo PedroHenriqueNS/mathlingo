@@ -308,13 +308,13 @@ export const activitiesList: TActivityConst[] = [
             type: 'Math',
             isAlternativaCerta: true,
             text: 'B = \\begin{pmatrix} 1 & -3 & -8 \\\\ 3 & 1 & -5 \\\\ 8 & 5 & 1 \\end{pmatrix}',
-          }
+          },
           {
             id: 2,
             type: 'Math',
             isAlternativaCerta: false,
             text: 'B = \\begin{pmatrix} 0 & -7 & 2 \\\\ -1 & 0 & -9 \\\\ 6 & 3 & 0 \\end{pmatrix}',
-          } 
+          },
         ],
       },
       {
@@ -343,7 +343,7 @@ export const activitiesList: TActivityConst[] = [
           {
             id: 2,
             type: 'Texto',
-            isAlternativaCerta: true,
+            isAlternativaCerta: false,
             text: '6',
           },
           {

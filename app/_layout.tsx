@@ -10,6 +10,7 @@ import { migrateDbIfNeeded } from '../db/migrations';
 import ActivitiesProvider from '~/context/ActivitiesContext';
 import { GluestackUIProvider } from '~/components/ui/gluestack-ui-provider';
 import FiresProvider from '~/context/FiresContext';
+import AssetsProvider from '~/context/ImagesContext';
 
 export default function Layout() {
 
@@ -34,21 +35,23 @@ export default function Layout() {
     <SQLiteProvider databaseName="mydb.db" onInit={migrateDbIfNeeded}>
       <ActivitiesProvider>
         <FiresProvider>
-          <GluestackUIProvider>
-            <StatusBar barStyle={'dark-content'} />
+          <AssetsProvider>
+            <GluestackUIProvider>
+              <StatusBar barStyle={'dark-content'} />
 
-            {/* <Redirect href="/achievements/unlock-achievements/1" /> */}
+              {/* <Redirect href="/activity/2/teoricals/1" /> */}
 
-            <Stack
-              screenOptions={{
-                headerShown: false,
-                contentStyle: {
-                  backgroundColor: colorScheme === "dark" ? "#131e24" : "#F1F1F1",
-                },
-                gestureEnabled: true
-              }}
-            />
-          </GluestackUIProvider>
+              <Stack
+                screenOptions={{
+                  headerShown: false,
+                  contentStyle: {
+                    backgroundColor: colorScheme === "dark" ? "#131e24" : "#F1F1F1",
+                  },
+                  gestureEnabled: true
+                }}
+              />
+            </GluestackUIProvider>
+          </AssetsProvider>
         </FiresProvider>
       </ActivitiesProvider>
     </SQLiteProvider>

@@ -25,6 +25,12 @@ declare type TAchivementsConst = TAchivementsDB & {
   svg: React.ReactNode | JSX.Element;
 };
 
+declare type TImageConst = {
+  id: string;
+  assetId: number;
+  descricao?: string;
+};
+
 declare type TContentBase = {
   id: number;
   contentTitle: string;

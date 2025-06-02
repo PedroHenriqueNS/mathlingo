@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View, Image } from "react-native";
 import { Container } from "~/components/Container";
 import { activitiesList } from "~/constants/activities";
 import ActivityHeader from "../_components/ActivityHeader";
@@ -9,9 +9,13 @@ import { useState } from "react";
 import { useActivitiesContext } from "~/context/ActivitiesContext";
 import ContinueButtonDrawer from "./_components/ContinueButtonDrawer";
 
+import { useAssetsContext } from "~/context/ImagesContext";
+import { imagesList } from "~/constants/images";
+
 export default function Page() {
   const { activityId, questionPageId } = useLocalSearchParams<{ activityId: string, questionPageId: string }>();
   const { changeActualActivityQuestion } = useActivitiesContext()
+  const { images } = useAssetsContext()
   const router = useRouter()
 
   const [hitQuestion, setHitQuestion] = useState(false)
@@ -67,6 +71,16 @@ export default function Page() {
                   <MathViewComponent math={paragraph.text} fontSize={15} />
                 </View>
 
+              if (paragraph.type === "Imagem") {
+
+                return <View key={paragraph.id} className="flex">
+                  <Image
+                    source={images?.[imagesList.find(image => image.id === paragraph.text)?.assetId ?? 0]}
+                    resizeMode="stretch"
+                    width={10}
+                  />
+                </View>
+              }
               return null
             })}
           </ScrollView>

@@ -2119,7 +2119,8 @@ export const activitiesList: TActivityConst[] = [
           },
         ],
       },
-    ],questionContent: [
+    ],
+    questionContent: [
       {
         id: 0,
         contentTitle: 'Identificando o Grau',
@@ -2562,7 +2563,31 @@ export const activitiesList: TActivityConst[] = [
           },
         ],
       },
-    ],  
+    ],
+  },
+  {
+    id: 4,
+    title: 'Derivadas',
+    achievementSlugs: ['achievement-polynomials'],
+    teoricalContent: [
+      //// TODO: Criar ao menos 1 página de teorica / Siga esse modelo
+      {
+        id: 0,
+        contentTitle: 'Derivada',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Determine a derivada da função abaixo:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = 5x^3 - 2x^2 + 4x - 7',
+          },
+        ],
+      },
+    ],
     questionContent: [
       {
         id: 0,

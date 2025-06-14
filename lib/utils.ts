@@ -18,7 +18,8 @@ export function generateCalendarDays(): Date[] {
   const current = new Date(start);
 
   while (current <= end) {
-    calendarDays.push(new Date(current));
+    let newDate = new Date(current);
+    calendarDays.push(newDate);
     current.setDate(current.getDate() + 1);
   }
 

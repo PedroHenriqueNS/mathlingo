@@ -1,39 +1,49 @@
-import { useLocalSearchParams } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { createContext, useContext, useEffect, useState } from "react"
 import { FiresRepository } from "~/services/fires.actions";
 
 type TFiresContext = {
-  fires: TFiresDB[]
+  fires: TFiresDB[],
+  insertTodaysFire: () => Promise<boolean>
 }
 
 const FiresContext = createContext<TFiresContext>({
   fires: [],
+  insertTodaysFire: async () => false
 })
 
 const FiresProvider = ({ children }: { children: React.ReactNode }) => {
-
-  const { refreshHeader } = useLocalSearchParams()
 
   const db = useSQLiteContext();
   const firesRepository = new FiresRepository(db)
 
   const [fires, setFires] = useState<TFiresDB[]>([])
 
+  const insertTodaysFire = async () => {
+    const result = await firesRepository.insertTodaysFire()
+
+    if (!result) return false;
+    if (result.changes === 0) return false;
+
+    const newFires = await firesRepository.gelAllFires();
+    setFires(newFires!)
+
+    return true;
+  }
+
   useEffect(() => {
     const runEffect = async () => {
-      await firesRepository.insertTodaysFire()
       const result = await firesRepository.gelAllFires()
 
-      setFires(result ?? [])
+      if (result) setFires(result)
     }
     runEffect()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [refreshHeader])
+  }, [db])
 
   return (
     <FiresContext.Provider value={{
       fires,
+      insertTodaysFire
     }}>
       {children}
     </FiresContext.Provider>

@@ -19,13 +19,6 @@ export default function Layout() {
 
   const [loaded] = useFonts(fontList);
 
-  // useEffect(() => {
-  //   initDatabase().then(async (db) => {
-  //     const result = await db.getAllAsync('SELECT * FROM activities');
-  //     console.log(result)
-  //   });
-  // }, []);
-
   if (!loaded) {
     // Async font loading only occurs in development.
     return null;
@@ -39,7 +32,7 @@ export default function Layout() {
             <GluestackUIProvider>
               <StatusBar barStyle={'dark-content'} />
 
-              {/* <Redirect href="/activity/2/teoricals/1" /> */}
+              {/* <Redirect href="/activity/1/finish" /> */}
 
               <Stack
                 screenOptions={{

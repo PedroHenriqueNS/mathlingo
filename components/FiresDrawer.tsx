@@ -25,7 +25,7 @@ const FiresDrawer = ({ children }: IFiresDrawer) => {
         dateFromArray.getUTCFullYear(),
         dateFromArray.getUTCMonth(),
         dateFromArray.getUTCDate(),
-        3, // Set hours to 03:00:00.000Z to match the second date
+        0, // Set hours to 00:00:00.000Z to match the second date
         0,
         0,
         0

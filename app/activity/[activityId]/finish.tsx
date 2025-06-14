@@ -2,7 +2,6 @@ import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { useEffect, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { Button } from "~/components/Button";
 import { Container } from "~/components/Container";
 import { activitiesList } from "~/constants/activities";
 import { useActivitiesContext } from "~/context/ActivitiesContext";
@@ -12,10 +11,15 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import Foundation from '@expo/vector-icons/Foundation';
 import { ActivitiesRepository } from "~/services/activities.actions";
+import { useFiresContext } from "~/context/FiresContext";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 
 export default function FinishPage() {
+
   const { activityId } = useLocalSearchParams<{ activityId: string }>();
   const { actualActivity, onChangeActivity, changeActualSucessActivity, resetActualActivity } = useActivitiesContext()
+  const { fires, insertTodaysFire } = useFiresContext()
+
   const activity = activitiesList.find(activity => activity.id === Number(activityId))!
 
   const router = useRouter()
@@ -25,6 +29,7 @@ export default function FinishPage() {
 
   const [isLoading, setIsLoading] = useState(false)
   const [receiveAchievement, setReceiveAchievement] = useState(false)
+  const [newTodaysFire, setNewTodaysFire] = useState(false)
   const [successRate, setSuccessRate] = useState(0)
 
   useEffect(() => {
@@ -49,6 +54,9 @@ export default function FinishPage() {
             isDone: true
           })
         })
+
+        const fireResult = await insertTodaysFire();
+        if (fireResult) setNewTodaysFire(true)
 
         for (const slug of activity.achievementSlugs) {
           let result = await achievementRepository.findAchievementBySlug(slug)
@@ -84,14 +92,32 @@ export default function FinishPage() {
         <Text className="w-full text-xl text-center text-neutral-600 font-jakarta-medium">Você completou a lição com sucesso</Text>
       </View>
 
-      <View className="w-full gap-2 p-5 border-2 rounded-3xl bg-amber-300/10 border-amber-300 flex-center">
-        <View className="flex-row gap-4 flex-center">
-          <SimpleLineIcons name="trophy" size={24} color="#fbbf24" />
-          <Text className="text-lg font-jakarta-bold text-amber-700">Motivação</Text>
+      {newTodaysFire
+        ? <View className="w-full gap-3 p-5 border-2 rounded-3xl bg-amber-300/10 border-amber-300 flex-center">
+          <View className="flex-row gap-4 flex-center">
+            <FontAwesome5 name="fire" size={50} color="#f97316" />
+
+            <View className="flex-center">
+              <Text className="text-lg font-jakarta-bold text-amber-800">Chama conquistada!</Text>
+
+              <Text className="text-4xl text-orange-500 font-jakarta-extrabold">{fires.length}</Text>
+            </View>
+          </View>
+
+          <View className="px-4 py-2 rounded-xl bg-amber-300/30">
+            <Text className="text-sm text-center text-amber-800 font-jakarta-semibold">Continue sua sequência! Volte amanhã para manter sua chama acesa 🔥</Text>
+          </View>
         </View>
 
-        <Text className="text-base text-center font-jakarta-semibold-italic text-amber-600">&quot;Continue reforçando seu aprendizado com os próximos temas!!!&quot;</Text>
-      </View>
+        : <View className="w-full gap-2 p-5 border-2 rounded-3xl bg-amber-300/10 border-amber-300 flex-center">
+          <View className="flex-row gap-4 flex-center">
+            <SimpleLineIcons name="trophy" size={24} color="#fbbf24" />
+            <Text className="text-lg font-jakarta-bold text-amber-700">Motivação</Text>
+          </View>
+
+          <Text className="text-base text-center font-jakarta-semibold-italic text-amber-600">&quot;Continue reforçando seu aprendizado com os próximos temas!!!&quot;</Text>
+        </View>
+      }
 
       <View className="flex w-full gap-2">
         <View className="flex flex-row items-center justify-between">

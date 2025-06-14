@@ -6,8 +6,11 @@ import { useSQLiteContext } from 'expo-sqlite';
 import { AchievementsRepository } from '~/services/achievements.actions';
 import { FiresRepository } from '~/services/fires.actions';
 import FiresDrawer from '~/components/FiresDrawer';
+import { useLocalSearchParams } from 'expo-router';
 
 export default function Header() {
+
+  const { refreshHeader } = useLocalSearchParams()
 
   const [fires, setFires] = useState(0)
   const [achievements, setAchievements] = useState(0)
@@ -26,7 +29,7 @@ export default function Header() {
     }
     getCount()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [db])
+  }, [db, refreshHeader])
 
   return (
     <View className='flex flex-row items-center h-16 justify-evenly'>

@@ -1,6 +1,7 @@
 import { Button, ButtonText } from "@/components/ui/button";
 import { Drawer, DrawerBackdrop, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter } from "@/components/ui/drawer";
 import { Text } from "@/components/ui/text";
+import { useLocalSearchParams } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { JSX, useEffect, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
@@ -12,6 +13,8 @@ interface IAchivementsDrawer {
 }
 
 const AchievementsDrawer = ({ children }: IAchivementsDrawer) => {
+
+  const { refreshHeader } = useLocalSearchParams()
 
   const [showDrawer, setShowDrawer] = useState(false);
   const [myAchievements, setMyAchievements] = useState<TAchivementsConst[]>([])
@@ -32,7 +35,7 @@ const AchievementsDrawer = ({ children }: IAchivementsDrawer) => {
     }
     getAchievements()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [db])
+  }, [db, refreshHeader])
 
   return (
     <>
@@ -88,6 +91,10 @@ const AchievementsDrawer = ({ children }: IAchivementsDrawer) => {
                 </View>
               ))}
             </View>
+
+            {myAchievements.length === 0 && <View className="flex items-center justify-center mx-6 mt-10">
+              <Text className="text-lg text-center font-jakarta-semibold">Parece que você ainda não possui nenhuma conquista</Text>
+            </View>}
           </DrawerBody>
 
           <DrawerFooter className="mb-5">

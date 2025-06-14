@@ -11,8 +11,9 @@ interface IFiresDrawer {
 
 const FiresDrawer = ({ children }: IFiresDrawer) => {
 
-  const [showDrawer, setShowDrawer] = useState(false);
   const { fires: myFires } = useFiresContext()
+
+  const [showDrawer, setShowDrawer] = useState(false);
 
   const calendarDays = generateCalendarDays()
   const weeks = Math.ceil((calendarDays.length) / 7);

@@ -85,7 +85,12 @@ export default function Page() {
       </View>
 
       <View className='flex-center'>
-        <Link href="/" asChild>
+        <Link
+          href={{
+            pathname: "/",
+            params: { refreshHeader: Date.now().toString() }
+          }}
+          asChild>
           <Button title="Voltar para o menu" />
         </Link>
       </View>

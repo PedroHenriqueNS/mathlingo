@@ -61,7 +61,7 @@ export default function Page() {
             <Text className='text-xl font-jakarta-bold'>{content.contentTitle}</Text>
           </View>
 
-          <ScrollView className='flex-1'>
+          <ScrollView className='relative flex-1'>
             {content.paragraphs.map(paragraph => {
               if (paragraph.type === "Texto")
                 return <Text key={paragraph.id} className='text-lg leading-7 font-jakarta-medium'>{paragraph.text}</Text>
@@ -76,8 +76,8 @@ export default function Page() {
                 return <View key={paragraph.id} className="flex">
                   <Image
                     source={images?.[imagesList.find(image => image.id === paragraph.text)?.assetId ?? 0]}
-                    resizeMode="stretch"
-                    width={10}
+                    resizeMode="contain"
+                    style={{ width: '100%' }}
                   />
                 </View>
               }

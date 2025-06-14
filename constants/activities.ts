@@ -78,7 +78,7 @@ export const activitiesList: TActivityConst[] = [
   {
     id: 2,
     title: 'Matrizes',
-    achievementSlugs: ['achievement-test'],
+    achievementSlugs: ['achievement-matrix'],
     teoricalContent: [
       {
         id: 0,
@@ -2637,7 +2637,7 @@ export const activitiesList: TActivityConst[] = [
   {
     id: 4,
     title: 'Funções',
-    achievementSlugs: ['achievement-test'],
+    achievementSlugs: ['achievement-functions'],
     teoricalContent: [
       {
         id: 0,

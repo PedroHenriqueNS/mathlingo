@@ -1,3 +1,4 @@
+import { useLocalSearchParams } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { createContext, useContext, useEffect, useState } from "react"
 import { FiresRepository } from "~/services/fires.actions";
@@ -11,6 +12,8 @@ const FiresContext = createContext<TFiresContext>({
 })
 
 const FiresProvider = ({ children }: { children: React.ReactNode }) => {
+
+  const { refreshHeader } = useLocalSearchParams()
 
   const db = useSQLiteContext();
   const firesRepository = new FiresRepository(db)
@@ -26,7 +29,7 @@ const FiresProvider = ({ children }: { children: React.ReactNode }) => {
     }
     runEffect()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [refreshHeader])
 
   return (
     <FiresContext.Provider value={{

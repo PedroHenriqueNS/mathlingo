@@ -2566,108 +2566,125 @@ export const activitiesList: TActivityConst[] = [
     ],
   },
   {
-  id: 4,
-  contentTitle: "Guia Completo de Derivadas: Teoria e Exemplos",
-  paragraphs: [
-    {
-      id: 0,
-      type: "Texto",
-      text: "Derivadas são uma das ferramentas mais importantes do cálculo. A seguir, você verá as principais regras para resolvê-las, com explicações detalhadas e exemplos resolvidos."
-    },
-
-    // 1. DERIVADA SIMPLES
-    {
-      id: 1,
-      type: "Texto",
-      text: "1. Derivada Simples: Utilizamos a regra da potência, que diz que a derivada de xⁿ é n·xⁿ⁻¹. Cada termo da função é derivado individualmente."
-    },
-    {
-      id: 2,
-      type: "Math",
-      text: "f(x) = 5x^3 - 2x^2 + 4x - 7"
-    },
-    {
-      id: 3,
-      type: "Math",
-      text: "f'(x) = 15x^2 - 4x + 4"
-    },
-    {
-      id: 4,
-      type: "Texto",
-      text: "Exemplo adicional: f(x) = x^4 - 3x^2 + 2x → derivamos cada termo."
-    },
-    {
-      id: 5,
-      type: "Math",
-      text: "f'(x) = 4x^3 - 6x + 2"
-    },
-
-    // 2. DERIVADA DO PRODUTO
-    {
-      id: 6,
-      type: "Texto",
-      text: "2. Derivada do Produto: Quando temos duas funções multiplicando, usamos a fórmula (fg)' = f'g + fg'."
-    },
-    {
-      id: 7,
-      type: "Math",
-      text: "(fg)' = f'g + fg'"
-    },
-    {
-      id: 8,
-      type: "Texto",
-      text: "Exemplo: f(x) = (2x)(x^2 + 1). Derivamos 2x (que dá 2) e x²+1 (que dá 2x), aplicando a fórmula."
-    },
-    {
-      id: 9,
-      type: "Math",
-      text: "f'(x) = 2(x^2 + 1) + 2x(2x) = 2x^2 + 2 + 4x^2 = 6x^2 + 2"
-    },
-    {
-      id: 10,
-      type: "Texto",
-      text: "Outro exemplo: f(x) = (x^2)(ln x)"
-    },
-    {
-      id: 11,
-      type: "Math",
-      text: "f'(x) = 2x \\ln x + x^2 \\cdot \\frac{1}{x} = 2x\\ln x + x"
-    },
-
-    // 3. REGRA DA CADEIA
-    {
-      id: 12,
-      type: "Texto",
-      text: "3. Regra da Cadeia: Usada para derivar funções compostas. Derivamos a externa, mantendo a interna, e multiplicamos pela derivada da interna."
-    },
-    {
-      id: 13,
-      type: "Texto",
-      text: "Exemplo: f(x) = sen(3x^2). Derivada da função seno é cosseno, mantemos 3x² e multiplicamos por sua derivada (6x)."
-    },
-    {
-      id: 14,
-      type: "Math",
-      text: "f'(x) = 6x \\cos(3x^2)"
-    },
-    {
-      id: 15,
-      type: "Texto",
-      text: "Exemplo 2: f(x) = e^{2x^3} → derivada da função exponencial, mantendo o expoente e multiplicando pela derivada de 2x³."
-    },
-    {
-      id: 16,
-      type: "Math",
-      text: "f'(x) = e^{2x^3} \\cdot 6x^2"
-    },
-    {
-      id: 17,
-      type: "Texto",
-      text: "Sempre que encontrar uma função 'dentro' de outra, lembre-se da regra da cadeia!"
-    }
-  ]
-}
-
+    id: 4,
+    title: 'Derivadas',
+    achievementSlugs: [''],
+    teoricalContent: [
+      {
+        id: 0,
+        contentTitle: 'Guia Completo de Derivadas: Teoria e Exemplos',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Derivadas são uma das ferramentas mais importantes do cálculo. A seguir, você verá as principais regras para resolvê-las, com explicações detalhadas e exemplos resolvidos.',
+          },
+        ],
+      },
+      {
+        id: 1,
+        contentTitle: '1. DERIVADA SIMPLES',
+        paragraphs: [
+          {
+            id: 1,
+            type: 'Texto',
+            text: '1. Derivada Simples: Utilizamos a regra da potência, que diz que a derivada de xⁿ é n·xⁿ⁻¹. Cada termo da função é derivado individualmente.',
+          },
+          {
+            id: 2,
+            type: 'Math',
+            text: 'f(x) = 5x^3 - 2x^2 + 4x - 7',
+          },
+          {
+            id: 3,
+            type: 'Math',
+            text: "f'(x) = 15x^2 - 4x + 4",
+          },
+          {
+            id: 4,
+            type: 'Texto',
+            text: 'Exemplo adicional: f(x) = x^4 - 3x^2 + 2x → derivamos cada termo.',
+          },
+          {
+            id: 5,
+            type: 'Math',
+            text: "f'(x) = 4x^3 - 6x + 2",
+          },
+        ],
+      },
+      {
+        id: 2,
+        contentTitle: '2. DERIVADA DO PRODUTO',
+        paragraphs: [
+          {
+            id: 6,
+            type: 'Texto',
+            text: "2. Derivada do Produto: Quando temos duas funções multiplicando, usamos a fórmula (fg)' = f'g + fg'.",
+          },
+          {
+            id: 7,
+            type: 'Math',
+            text: "(fg)' = f'g + fg'",
+          },
+          {
+            id: 8,
+            type: 'Texto',
+            text: 'Exemplo: f(x) = (2x)(x^2 + 1). Derivamos 2x (que dá 2) e x²+1 (que dá 2x), aplicando a fórmula.',
+          },
+          {
+            id: 9,
+            type: 'Math',
+            text: "f'(x) = 2(x^2 + 1) + 2x(2x) = 2x^2 + 2 + 4x^2 = 6x^2 + 2",
+          },
+          {
+            id: 10,
+            type: 'Texto',
+            text: 'Outro exemplo: f(x) = (x^2)(ln x)',
+          },
+          {
+            id: 11,
+            type: 'Math',
+            text: "f'(x) = 2x \\ln x + x^2 \\cdot \\frac{1}{x} = 2x\\ln x + x",
+          },
+        ],
+      },
+      {
+        id: 3,
+        contentTitle: '3. REGRA DA CADEIA',
+        paragraphs: [
+          {
+            id: 12,
+            type: 'Texto',
+            text: '3. Regra da Cadeia: Usada para derivar funções compostas. Derivamos a externa, mantendo a interna, e multiplicamos pela derivada da interna.',
+          },
+          {
+            id: 13,
+            type: 'Texto',
+            text: 'Exemplo: f(x) = sen(3x^2). Derivada da função seno é cosseno, mantemos 3x² e multiplicamos por sua derivada (6x).',
+          },
+          {
+            id: 14,
+            type: 'Math',
+            text: "f'(x) = 6x \\cos(3x^2)",
+          },
+          {
+            id: 15,
+            type: 'Texto',
+            text: 'Exemplo 2: f(x) = e^{2x^3} → derivada da função exponencial, mantendo o expoente e multiplicando pela derivada de 2x³.',
+          },
+          {
+            id: 16,
+            type: 'Math',
+            text: "f'(x) = e^{2x^3} \\cdot 6x^2",
+          },
+          {
+            id: 17,
+            type: 'Texto',
+            text: "Sempre que encontrar uma função 'dentro' de outra, lembre-se da regra da cadeia!",
+          },
+        ],
+      },
+    ],
     questionContent: [
       {
         id: 0,
@@ -2790,4 +2807,5 @@ export const activitiesList: TActivityConst[] = [
         ],
       },
     ],
+  },
 ];

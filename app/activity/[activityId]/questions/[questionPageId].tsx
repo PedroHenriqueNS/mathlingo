@@ -73,7 +73,7 @@ export default function Page() {
 
               if (paragraph.type === "Imagem") {
 
-                return <View key={paragraph.id} className="flex">
+                return <View key={paragraph.id} className="flex max-h-[20rem]">
                   <Image
                     source={images?.[imagesList.find(image => image.id === paragraph.text)?.assetId ?? 0]}
                     resizeMode="contain"

@@ -1,4 +1,4 @@
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { Container } from '~/components/Container'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, useLocalSearchParams } from 'expo-router';
@@ -7,10 +7,13 @@ import { MathViewComponent } from '~/components/MathViewComponent';
 import { useState, useEffect } from 'react';
 import ActivityHeader from '../_components/ActivityHeader';
 import { useActivitiesContext } from '~/context/ActivitiesContext';
+import { useAssetsContext } from '~/context/ImagesContext';
+import { imagesList } from '~/constants/images';
 
 export default function Page() {
   const { activityId, teoricalPageId } = useLocalSearchParams<{ activityId: string, teoricalPageId: string }>();
   const { changeActualSucessActivity } = useActivitiesContext()
+  const { images } = useAssetsContext()
 
   const activity = activitiesList.find(activity => activity.id === Number(activityId))!
   const content = activity.teoricalContent[Number(teoricalPageId)]
@@ -56,6 +59,15 @@ export default function Page() {
               if (paragraph.type === "Math")
                 return <View key={paragraph.id} className='my-5 flex-center'>
                   <MathViewComponent math={paragraph.text} fontSize={15} />
+                </View>
+
+              if (paragraph.type === "Imagem")
+                return <View key={paragraph.id} className="flex max-h-[20rem]">
+                  <Image
+                    source={images?.[imagesList.find(image => image.id === paragraph.text)?.assetId ?? 0]}
+                    resizeMode="contain"
+                    style={{ width: '100%', height: '100%' }}
+                  />
                 </View>
 
               return null

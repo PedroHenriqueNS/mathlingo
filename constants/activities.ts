@@ -1,82 +1,82 @@
 export const activitiesList: TActivityConst[] = [
+  // {
+  //   id: 1,
+  //   title: 'Conteúdo 1',
+  //   achievementSlugs: ['achievement-test'],
+  //   teoricalContent: [
+  //     //// PÁGINAS
+  //     {
+  //       id: 0,
+  //       contentTitle: 'Explicação 1',
+  //       paragraphs: [
+  //         //// PARAGRAFOS
+  //         {
+  //           id: 0,
+  //           type: 'Texto',
+  //           text: 'Texto de teste 21321321 dsasdsadsadvcx, segue abaixo uma formula matemateca',
+  //         },
+  //         {
+  //           id: 1,
+  //           type: 'Math', //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
+  //           text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: 1,
+  //       contentTitle: 'Explicação 2',
+  //       paragraphs: [
+  //         //// PARAGRAFOS
+  //         {
+  //           id: 0,
+  //           type: 'Texto',
+  //           text: 'Texto de teste blablabla explicação 2, segue mais uma formula de matemateca',
+  //         },
+  //         {
+  //           id: 1,
+  //           type: 'Math', //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
+  //           text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   questionContent: [
+  //     //// PÁGINAS
+  //     {
+  //       id: 0,
+  //       contentTitle: 'Atividade 1',
+  //       paragraphs: [
+  //         //// PARAGRAFOS DO TEXTO
+  //         {
+  //           id: 0,
+  //           type: 'Texto',
+  //           text: 'Assinale a resposta correta da seguinte fórmula',
+  //         },
+  //         {
+  //           id: 1,
+  //           type: 'Math',
+  //           text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+  //         },
+  //       ],
+  //       alternatives: [
+  //         {
+  //           id: 0,
+  //           type: 'Math',
+  //           isAlternativaCerta: true,
+  //           text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+  //         },
+  //         {
+  //           id: 1,
+  //           type: 'Math',
+  //           isAlternativaCerta: false,
+  //           text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     id: 1,
-    title: 'Conteúdo 1',
-    achievementSlugs: ['achievement-test'],
-    teoricalContent: [
-      //// PÁGINAS
-      {
-        id: 0,
-        contentTitle: 'Explicação 1',
-        paragraphs: [
-          //// PARAGRAFOS
-          {
-            id: 0,
-            type: 'Texto',
-            text: 'Texto de teste 21321321 dsasdsadsadvcx, segue abaixo uma formula matemateca',
-          },
-          {
-            id: 1,
-            type: 'Math', //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
-          },
-        ],
-      },
-      {
-        id: 1,
-        contentTitle: 'Explicação 2',
-        paragraphs: [
-          //// PARAGRAFOS
-          {
-            id: 0,
-            type: 'Texto',
-            text: 'Texto de teste blablabla explicação 2, segue mais uma formula de matemateca',
-          },
-          {
-            id: 1,
-            type: 'Math', //// FORMULAS MATEMÁTICAS EM "EXPRESSÕES DE LaTeX" (LaTeX é uma expressão matematica ou formula que é formatada e exibida em um documento digital)
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
-          },
-        ],
-      },
-    ],
-    questionContent: [
-      //// PÁGINAS
-      {
-        id: 0,
-        contentTitle: 'Atividade 1',
-        paragraphs: [
-          //// PARAGRAFOS DO TEXTO
-          {
-            id: 0,
-            type: 'Texto',
-            text: 'Assinale a resposta correta da seguinte fórmula',
-          },
-          {
-            id: 1,
-            type: 'Math',
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
-          },
-        ],
-        alternatives: [
-          {
-            id: 0,
-            type: 'Math',
-            isAlternativaCerta: true,
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
-          },
-          {
-            id: 1,
-            type: 'Math',
-            isAlternativaCerta: false,
-            text: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 2,
     title: 'Matrizes',
     achievementSlugs: ['achievement-matrix'],
     teoricalContent: [
@@ -357,7 +357,7 @@ export const activitiesList: TActivityConst[] = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     title: 'Polinômios',
     achievementSlugs: ['achievement-polynomials'],
     teoricalContent: [
@@ -2635,7 +2635,7 @@ export const activitiesList: TActivityConst[] = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     title: 'Funções',
     achievementSlugs: ['achievement-functions'],
     teoricalContent: [
@@ -2657,6 +2657,11 @@ export const activitiesList: TActivityConst[] = [
             id: 2,
             type: 'Texto',
             text: 'Se a = 0, a função é constante. Quando a > 0, a função é decrescente. E, por fim, quando a < 0, a função é decrescente.',
+          },
+          {
+            id: 3,
+            type: 'Imagem',
+            text: 'imagem-id-2',
           },
         ],
       },
@@ -2716,16 +2721,21 @@ export const activitiesList: TActivityConst[] = [
           },
           {
             id: 10,
+            type: 'Imagem',
+            text: 'imagem-id-3',
+          },
+          {
+            id: 11,
             type: 'Texto',
             text: 'Para acharmos o ponto do vértice da parábola, ou seja, seu ponto mais alto ou mais baixo, podemos usar as fórmulas a seguir:',
           },
           {
-            id: 11,
+            id: 12,
             type: 'Math',
             text: 'x_v=\\frac{-b}{2a}',
           },
           {
-            id: 12,
+            id: 13,
             type: 'Math',
             text: 'y_v=\\frac{-\\Delta}{4a}',
           },
@@ -2757,11 +2767,16 @@ export const activitiesList: TActivityConst[] = [
           },
           {
             id: 4,
+            type: 'Imagem',
+            text: 'imagem-id-4',
+          },
+          {
+            id: 5,
             type: 'Texto',
             text: 'Um dos maiores usos dessa função é representado no exemplo da Fórmula Financeira a seguir. Nela, V é o valor acumulado após o tempo t, V0 é o valor inicial e i é a taxa, podendo ser negativa ou positiva.',
           },
           {
-            id: 5,
+            id: 6,
             type: 'Math',
             text: 'V=V_0(1+i)^t',
           },
@@ -2788,16 +2803,21 @@ export const activitiesList: TActivityConst[] = [
           },
           {
             id: 3,
+            type: 'Imagem',
+            text: 'imagem-id-5',
+          },
+          {
+            id: 4,
             type: 'Texto',
             text: 'Abaixo há duas propriedades logarítmicas importantes.',
           },
           {
-            id: 4,
+            id: 5,
             type: 'Math',
             text: '\\log_{a}b = x \\iff a^{x} = b',
           },
           {
-            id: 5,
+            id: 6,
             type: 'Math',
             text: '\\log_{a}(b^{c}) = c \\cdot \\log_{a}b',
           },
@@ -3075,6 +3095,249 @@ export const activitiesList: TActivityConst[] = [
             type: 'Texto',
             isAlternativaCerta: true,
             text: 'Após 9 horas e meia',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: 'Derivadas',
+    achievementSlugs: ['achievement-derivatives'],
+    teoricalContent: [
+      {
+        id: 0,
+        contentTitle: 'Guia Completo de Derivadas: Teoria e Exemplos',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Derivadas são uma das ferramentas mais importantes do cálculo. A seguir, você verá as principais regras para resolvê-las, com explicações detalhadas e exemplos resolvidos.',
+          },
+        ],
+      },
+      {
+        id: 1,
+        contentTitle: '1. DERIVADA SIMPLES',
+        paragraphs: [
+          {
+            id: 1,
+            type: 'Texto',
+            text: '1. Derivada Simples: Utilizamos a regra da potência, que diz que a derivada de xⁿ é n·xⁿ⁻¹. Cada termo da função é derivado individualmente.',
+          },
+          {
+            id: 2,
+            type: 'Math',
+            text: 'f(x) = 5x^3 - 2x^2 + 4x - 7',
+          },
+          {
+            id: 3,
+            type: 'Math',
+            text: "f'(x) = 15x^2 - 4x + 4",
+          },
+          {
+            id: 4,
+            type: 'Texto',
+            text: 'Exemplo adicional: f(x) = x^4 - 3x^2 + 2x → derivamos cada termo.',
+          },
+          {
+            id: 5,
+            type: 'Math',
+            text: "f'(x) = 4x^3 - 6x + 2",
+          },
+        ],
+      },
+      {
+        id: 2,
+        contentTitle: '2. DERIVADA DO PRODUTO',
+        paragraphs: [
+          {
+            id: 6,
+            type: 'Texto',
+            text: "2. Derivada do Produto: Quando temos duas funções multiplicando, usamos a fórmula (fg)' = f'g + fg'.",
+          },
+          {
+            id: 7,
+            type: 'Math',
+            text: "(fg)' = f'g + fg'",
+          },
+          {
+            id: 8,
+            type: 'Texto',
+            text: 'Exemplo: f(x) = (2x)(x^2 + 1). Derivamos 2x (que dá 2) e x²+1 (que dá 2x), aplicando a fórmula.',
+          },
+          {
+            id: 9,
+            type: 'Math',
+            text: "f'(x) = 2(x^2 + 1) + 2x(2x) = 2x^2 + 2 + 4x^2 = 6x^2 + 2",
+          },
+          {
+            id: 10,
+            type: 'Texto',
+            text: 'Outro exemplo: f(x) = (x^2)(ln x)',
+          },
+          {
+            id: 11,
+            type: 'Math',
+            text: "f'(x) = 2x \\ln x + x^2 \\cdot \\frac{1}{x} = 2x\\ln x + x",
+          },
+        ],
+      },
+      {
+        id: 3,
+        contentTitle: '3. REGRA DA CADEIA',
+        paragraphs: [
+          {
+            id: 12,
+            type: 'Texto',
+            text: '3. Regra da Cadeia: Usada para derivar funções compostas. Derivamos a externa, mantendo a interna, e multiplicamos pela derivada da interna.',
+          },
+          {
+            id: 13,
+            type: 'Texto',
+            text: 'Exemplo: f(x) = sen(3x^2). Derivada da função seno é cosseno, mantemos 3x² e multiplicamos por sua derivada (6x).',
+          },
+          {
+            id: 14,
+            type: 'Math',
+            text: "f'(x) = 6x \\cos(3x^2)",
+          },
+          {
+            id: 15,
+            type: 'Texto',
+            text: 'Exemplo 2: f(x) = e^{2x^3} → derivada da função exponencial, mantendo o expoente e multiplicando pela derivada de 2x³.',
+          },
+          {
+            id: 16,
+            type: 'Math',
+            text: "f'(x) = e^{2x^3} \\cdot 6x^2",
+          },
+          {
+            id: 17,
+            type: 'Texto',
+            text: "Sempre que encontrar uma função 'dentro' de outra, lembre-se da regra da cadeia!",
+          },
+        ],
+      },
+    ],
+    questionContent: [
+      {
+        id: 0,
+        contentTitle: 'Derivada',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Determine a derivada da função abaixo:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = 5x^3 - 2x^2 + 4x - 7',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Texto',
+            isAlternativaCerta: true,
+            text: 'f(x) = 15x^2 - 4x + 4',
+          },
+          {
+            id: 1,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: 'f(x) = 15x^2 + 4',
+          },
+          {
+            id: 2,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: 'f(x) = 15x^2 + 4x - 4',
+          },
+          {
+            id: 3,
+            type: 'Texto',
+            isAlternativaCerta: false,
+            text: 'f(x) = 5x^2 + 4x - 4',
+          },
+        ],
+      },
+      {
+        id: 1,
+        contentTitle: 'Produto de funções',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Calcule a derivada a seguir:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = (2x^2 + 3x)(x^3 - x)',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Math',
+            isAlternativaCerta: true,
+            text: 'f(x) = (4x + 3)(x^3 - x) + (2x^2 + 3x)(3x^2 - 1)',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = (4x + 3)(x^3 - 1) + (2x^2 + 3)(3x^2 - 1)',
+          },
+          {
+            id: 2,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = (4x + 3) + (3x^2 - 1)',
+          },
+        ],
+      },
+      {
+        id: 2,
+        contentTitle: 'Regra da Cadeia',
+        paragraphs: [
+          {
+            id: 0,
+            type: 'Texto',
+            text: 'Calcule a derivada:',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            text: 'f(x) = \sin(3x^2)',
+          },
+        ],
+        alternatives: [
+          {
+            id: 0,
+            type: 'Math',
+            isAlternativaCerta: true,
+            text: 'f(x) = 6x \cos(3x^2)',
+          },
+          {
+            id: 1,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = 3x \cos(3x^2)',
+          },
+          {
+            id: 2,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = 2x \cos(3x^3)',
+          },
+          {
+            id: 3,
+            type: 'Math',
+            isAlternativaCerta: false,
+            text: 'f(x) = 6x \cos(3x)',
           },
         ],
       },

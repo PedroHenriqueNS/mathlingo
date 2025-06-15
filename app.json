@@ -29,7 +29,14 @@
       [
         "expo-asset",
         {
-          "assets": ["/assets/images/imagem-id-0.jpg", "/assets/images/imagem-id-1.jpg"]
+          "assets": [
+            "/assets/images/imagem-id-0.jpg",
+            "/assets/images/imagem-id-1.jpg",
+            "/assets/images/imagem-id-2.jpg",
+            "/assets/images/imagem-id-3.jpg",
+            "/assets/images/imagem-id-4.jpg",
+            "/assets/images/imagem-id-5.jpg"
+          ]
         }
       ]
     ],

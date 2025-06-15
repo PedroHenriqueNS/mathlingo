@@ -14,6 +14,10 @@ const AssetsProvider = ({ children }: { children: React.ReactNode }) => {
   const [assets] = useAssets([
     require('../assets/images/imagem-id-0.jpg'),
     require('../assets/images/imagem-id-1.jpg'),
+    require('../assets/images/imagem-id-2.jpg'),
+    require('../assets/images/imagem-id-3.jpg'),
+    require('../assets/images/imagem-id-4.jpg'),
+    require('../assets/images/imagem-id-5.jpg'),
   ]);
 
   return (

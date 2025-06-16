@@ -25,7 +25,7 @@ const FiresDrawer = ({ children }: IFiresDrawer) => {
         dateFromArray.getUTCFullYear(),
         dateFromArray.getUTCMonth(),
         dateFromArray.getUTCDate(),
-        0, // Set hours to 00:00:00.000Z to match the second date
+        3, // Set hours to 00:00:00.000Z to match the second date
         0,
         0,
         0
@@ -34,8 +34,8 @@ const FiresDrawer = ({ children }: IFiresDrawer) => {
     return formattedDateFromArray;
   })
 
-  // console.log(firesDateArray, calendarDays[28])
-  // console.log(firesDateArray.includes(new Date(calendarDays[28]).toISOString()))
+  console.log(firesDateArray, calendarDays[28])
+  console.log(firesDateArray.includes(new Date(calendarDays[28]).toISOString()))
 
   return (
     <>

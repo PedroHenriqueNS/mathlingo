@@ -34,8 +34,8 @@ const FiresDrawer = ({ children }: IFiresDrawer) => {
     return formattedDateFromArray;
   })
 
-  console.log(firesDateArray, calendarDays[28])
-  console.log(firesDateArray.includes(new Date(calendarDays[28]).toISOString()))
+  // console.log(firesDateArray, calendarDays[28])
+  // console.log(firesDateArray.includes(new Date(calendarDays[28]).toISOString()))
 
   return (
     <>

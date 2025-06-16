@@ -82,4 +82,4 @@ Este projeto foi desenvolvido por:
   - [**GitHub** - @PedroPalos](https://github.com/PedroPalos)
 
 - **Raphael Rapisardi**:
-  - [**GitHub** - @HigorSilvaMiquilino](https://github.com/HigorSilvaMiquRaphaelRapisardi2003ilino)
+  - [**GitHub** - @RaphaelRapisardi2003](https://github.com/RaphaelRapisardi2003)
